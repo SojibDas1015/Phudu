@@ -1,0 +1,195 @@
+[
+    {
+        "id": 1,
+        "name": "Dr. John Doe",
+        "image": "/images/doc1.png",
+        "education": "MBBS, FCPS (Cardiology)",
+        "speciality": "Cardiologist",
+        "designation": "Senior Consultant",
+        "workplace": "City Hospital, Dhaka",
+        "experience": "10+ Years",
+        "registrationNumber": "REG-1001",
+        "fee": 800,
+        "availability": [
+            "Sunday",
+            "Tuesday",
+            "Thursday"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Dr. Sarah Khan",
+        "image": "/images/doc2.png",
+        "education": "MBBS, MS (Gynecology)",
+        "speciality": "Gynecologist",
+        "designation": "Consultant",
+        "workplace": "Popular Hospital",
+        "experience": "7 Years",
+        "registrationNumber": "REG-1002",
+        "fee": 600,
+        "availability": [
+            "Monday",
+            "Wednesday"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Dr. Rahim Ahmed",
+        "image": "/images/doc3.png",
+        "education": "MBBS, MD (Medicine)",
+        "speciality": "General Physician",
+        "designation": "Senior Doctor",
+        "workplace": "Square Hospital",
+        "experience": "12 Years",
+        "registrationNumber": "REG-1003",
+        "fee": 500,
+        "availability": [
+            "Saturday",
+            "Monday"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Dr. Anika Islam",
+        "image": "/images/doc4.png",
+        "education": "BDS, FCPS (Dental)",
+        "speciality": "Dentist",
+        "designation": "Consultant",
+        "workplace": "Dental Care BD",
+        "experience": "5 Years",
+        "registrationNumber": "REG-1004",
+        "fee": 400,
+        "availability": [
+            "Sunday",
+            "Wednesday"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Dr. Mehedi Hasan",
+        "image": "/images/doc5.png",
+        "education": "MBBS, MS (Orthopedic)",
+        "speciality": "Orthopedic Surgeon",
+        "designation": "Specialist",
+        "workplace": "Apollo Hospital",
+        "experience": "9 Years",
+        "registrationNumber": "REG-1005",
+        "fee": 900,
+        "availability": [
+            "Tuesday",
+            "Thursday"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Dr. Nusrat Jahan",
+        "image": "/images/doc6.png",
+        "education": "MBBS, MD (Dermatology)",
+        "speciality": "Skin Specialist",
+        "designation": "Consultant",
+        "workplace": "Skin Care Clinic",
+        "experience": "6 Years",
+        "registrationNumber": "REG-1006",
+        "fee": 700,
+        "availability": [
+            "Monday",
+            "Friday"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Dr. Tanvir Hossain",
+        "image": "/images/doc7.png",
+        "education": "MBBS, MD (Neurology)",
+        "speciality": "Neurologist",
+        "designation": "Senior Consultant",
+        "workplace": "United Hospital",
+        "experience": "11 Years",
+        "registrationNumber": "REG-1007",
+        "fee": 1000,
+        "availability": [
+            "Sunday",
+            "Thursday"
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Dr. Shila Akter",
+        "image": "/images/doc8.png",
+        "education": "MBBS, DCH",
+        "speciality": "Child Specialist",
+        "designation": "Consultant",
+        "workplace": "Child Care Hospital",
+        "experience": "8 Years",
+        "registrationNumber": "REG-1008",
+        "fee": 550,
+        "availability": [
+            "Tuesday",
+            "Friday"
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Dr. Fahim Rahman",
+        "image": "/images/doc9.png",
+        "education": "MBBS, MS (ENT)",
+        "speciality": "ENT Specialist",
+        "designation": "Doctor",
+        "workplace": "ENT Care Center",
+        "experience": "4 Years",
+        "registrationNumber": "REG-1009",
+        "fee": 450,
+        "availability": [
+            "Saturday",
+            "Wednesday"
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Dr. Ritu Saha",
+        "image": "/images/doc10.png",
+        "education": "MBBS, MD (Psychiatry)",
+        "speciality": "Psychiatrist",
+        "designation": "Consultant",
+        "workplace": "Mind Care BD",
+        "experience": "10 Years",
+        "registrationNumber": "REG-1010",
+        "fee": 650,
+        "availability": [
+            "Monday",
+            "Thursday"
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Dr. Arif Chowdhury",
+        "image": "/images/doc11.png",
+        "education": "MBBS, MS (Surgery)",
+        "speciality": "Surgeon",
+        "designation": "Senior Surgeon",
+        "workplace": "Green Life Hospital",
+        "experience": "14 Years",
+        "registrationNumber": "REG-1011",
+        "fee": 1100,
+        "availability": [
+            "Sunday",
+            "Tuesday"
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Dr. Lima Khatun",
+        "image": "/images/doc12.png",
+        "education": "MBBS, FCPS (Eye)",
+        "speciality": "Eye Specialist",
+        "designation": "Consultant",
+        "workplace": "Vision Eye Hospital",
+        "experience": "7 Years",
+        "registrationNumber": "REG-1012",
+        "fee": 600,
+        "availability": [
+            "Wednesday",
+            "Friday"
+        ]
+    }
+]
