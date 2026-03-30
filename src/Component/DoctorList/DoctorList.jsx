@@ -2,10 +2,15 @@ import React, { useEffect, useState } from 'react';
 import Doctor from './Doctor';
 
 const DoctorList = () => {
+    const [showData, setShowData] = useState(false)
     const [doctorData, setDoctorData] = useState([])
-    useEffect(()=>{
+    useEffect(() => {
         fetch('doctors.json').then(res => res.json()).then(data => setDoctorData(data));
-    },[])
+    }, [])
+    const doctors = showData ? doctorData : doctorData.slice(0,6)
+    const handleAllDataShow = () => {
+        setShowData(!showData)
+    }
     return (
         <div className='max-w-[1281px] mx-auto px-2 md:px-10 py-20'>
             <div className='space-y-4'>
@@ -14,8 +19,12 @@ const DoctorList = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-8'>
                 {
-                    doctorData.map(doctor => <Doctor key={doctor.id} doctor={doctor}></Doctor>)
+                    
+                    doctors.map(doctor => <Doctor key={doctor.id} doctor={doctor}></Doctor>)
                 }
+            </div>
+            <div className='text-center pt-12'>
+                <button onClick={handleAllDataShow} className='text-xl font-bold bg-[#176AE5] rounded-full px-6 py-2 text-white cursor-pointer'>View All Doctors</button>
             </div>
         </div>
     );
