@@ -13,8 +13,9 @@ const MedicalServiceCard = ({ medical }) => {
                     duration={3}
                     suffix="+"
                     enableScrollSpy={true}
-                    scrollSpyOnce={true}
-                />
+                    scrollSpyOnce={true}>
+                    {({ countUpRef }) => <span ref={countUpRef}></span>}
+                </RealCountUP>
             </h3>
             <h3 className='text-xl font-semibold text-[#0F0F0F60]'>{medical.label}</h3>
         </div>

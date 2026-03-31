@@ -2,6 +2,7 @@ import React from 'react';
 import { createBrowserRouter } from 'react-router';
 import Root from '../Root/Root';
 import Home from '../Pages/Home/Home';
+import DoctorsProfileDetails from '../Pages/DoctorsProfileDetails/DoctorsProfileDetails';
 
 export const router = createBrowserRouter([
     {
@@ -11,6 +12,13 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 Component: Home
+            },
+            {
+                path: '/:id',
+                loader: () => fetch('doctors.json'),
+                HydrateFallback: ()=> <div className='flex justify-center h-screen items-center'><span className="loading loading-bars loading-xl"></span></div>
+,
+                Component: DoctorsProfileDetails
             }
         ]
     },

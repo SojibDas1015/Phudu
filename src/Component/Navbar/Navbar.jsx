@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../assets/logo.png'
+import { NavLink } from 'react-router';
 const Navbar = () => {
     return (
         <div className='max-w-[1281px] mx-auto md:px-10'>
@@ -24,11 +25,11 @@ const Navbar = () => {
                     </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-                        <li><a>Home</a></li>
-                        <li><a>My-Bookings</a></li>
-                        <li><a>Blogs</a></li>
-                        <li><a>Contact Us</a></li>
+                    <ul className="menu menu-horizontal px-1 gap-3 text-base">
+                        <NavLink to={'/'} className={({isActive})=> isActive ? 'border-b-2' : ''}><li>Home</li></NavLink>
+                        <li>My-Bookings</li>
+                        <li>Blogs</li>
+                        <li>Contact Us</li>
                     </ul>
                 </div>
                 <div className="navbar-end">

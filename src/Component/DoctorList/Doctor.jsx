@@ -1,7 +1,8 @@
 import React from 'react';
 import relogo from '../../assets/registration.png'
+import { NavLink } from 'react-router';
 const Doctor = ({ doctor }) => {
-    const { image, availability, experience, name, designation, registrationNumber } = doctor
+    const { id, image, availability, experience, name, designation, registrationNumber } = doctor
     return (
         <div className='space-y-3 p-4 bg-white rounded-3xl'>
             <img className='w-full h-80 object-cover object-top rounded-3xl' src={image} alt="" />
@@ -16,7 +17,9 @@ const Doctor = ({ doctor }) => {
                 <img src={relogo} alt="" />
                 <p>{registrationNumber}</p>
             </div>
-            <button className='text-lg font-bold text-[#176AE5] border-1 border-[#176AE5] rounded-full py-2 w-full'>View Details</button>
+            <NavLink to={`/${id}`}>
+                <button className='text-lg font-bold text-[#176AE5] border-1 border-[#176AE5] rounded-full py-2 w-full hover:bg-[#176AE5] hover:text-white cursor-pointer'>View Details</button>
+            </NavLink>
         </div>
     );
 };
