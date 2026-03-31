@@ -1,14 +1,21 @@
 import React from 'react';
-import { useLoaderData, useParams } from 'react-router';
+import { NavLink, useLoaderData, useNavigate, useParams } from 'react-router';
 import relogo from '../../assets/registration.png'
 import Available from './Available';
 import { BiMessageSquareError } from 'react-icons/bi';
+import { toast, ToastContainer } from 'react-toastify';
+import { getDataFormLocalStorage, setDataFormLocalStorage } from '../../Utelities/Utelities';
 const DoctorsProfileDetails = () => {
     const doctorsData = useLoaderData()
     const params = useParams()
     const paramsId = parseInt(params.id);
     const doctorProfile = Array.isArray(doctorsData) ? doctorsData.find(doctor => doctor.id === paramsId) : null
-    const { image, name, speciality, designation, workplace, registrationNumber, availability, fee } = doctorProfile;
+    const { id, image, name, speciality, designation, workplace, registrationNumber, availability, fee } = doctorProfile;
+    const handleBookNow = (id) => {
+        const getmain = getDataFormLocalStorage()
+        setDataFormLocalStorage(id)
+        
+    }
     return (
         <div className='max-w-[1281px] mx-auto px-2 md:px-10 '>
             <div className='space-y-4 py-14 bg-white rounded-3xl'>
@@ -49,7 +56,9 @@ const DoctorsProfileDetails = () => {
                 </div>
                 <p className='flex items-center gap-1 text-[#FFA000] border-1 border-[#FFA00020] bg-[#FFA00010] px-3 py2 rounded-full'><BiMessageSquareError />
                     Due to high patient volume, we are currently accepting appointments for today only. We appreciate your understanding and cooperation.</p>
-                <button className='py-2 bg-[#176AE5] rounded-full text-white text-lg font-bold w-full'>Book Appointment Now</button>
+                <NavLink to='/mybookings'>
+                    <button onClick={() => handleBookNow(id)} className='py-2 bg-[#176AE5] rounded-full text-white text-lg font-bold w-full hover:bg-[#0055d4] cursor-pointer'>Book Appointment Now</button>
+                </NavLink>
             </div>
         </div>
     );

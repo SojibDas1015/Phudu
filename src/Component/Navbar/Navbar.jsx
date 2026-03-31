@@ -27,7 +27,7 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 gap-3 text-base">
                         <NavLink to={'/'} className={({isActive})=> isActive ? 'border-b-2' : ''}><li>Home</li></NavLink>
-                        <li>My-Bookings</li>
+                        <NavLink to={'/mybookings'} className={({isActive})=> isActive ? 'border-b-2' : ''}><li>My-Bookings</li></NavLink>
                         <li>Blogs</li>
                         <li>Contact Us</li>
                     </ul>
