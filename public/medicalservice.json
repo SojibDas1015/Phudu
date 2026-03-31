@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "start_count": 0,
+    "end_count": 199,
+    "label": "Total Doctors",
+    "image_url": "https://i.ibb.co.com/zVDr3Ggn/success-doctor.png",
+    "suffix": "+"
+  },
+  {
+    "id": 2,
+    "start_count": 0,
+    "end_count": 467,
+    "label": "Total Reviews",
+    "image_url": "https://i.ibb.co.com/GfprwJdP/success-review.png",
+    "suffix": "+"
+  },
+  {
+    "id": 3,
+    "start_count": 0,
+    "end_count": 1900,
+    "label": "Patients",
+    "image_url": "https://i.ibb.co.com/WXC8Q0Q/success-patients.png",
+    "suffix": "+"
+  },
+  {
+    "id": 4,
+    "start_count": 0,
+    "end_count": 300,
+    "label": "Total Stuffs",
+    "image_url": "https://i.ibb.co.com/tMfqxCtH/success-staffs.png",
+    "suffix": "+"
+  }
+]
