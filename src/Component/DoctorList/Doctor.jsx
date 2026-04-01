@@ -17,7 +17,7 @@ const Doctor = ({ doctor }) => {
                 <img src={relogo} alt="" />
                 <p>{registrationNumber}</p>
             </div>
-            <NavLink to={`/${id}`}>
+            <NavLink to={`/doctor/${id}`}>
                 <button className='text-lg font-bold text-[#176AE5] border-1 border-[#176AE5] rounded-full py-2 w-full hover:bg-[#176AE5] hover:text-white cursor-pointer'>View Details</button>
             </NavLink>
         </div>

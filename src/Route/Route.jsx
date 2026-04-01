@@ -6,6 +6,7 @@ import DoctorsProfileDetails from '../Pages/DoctorsProfileDetails/DoctorsProfile
 import MyBookings from '../Pages/MyBookings/MyBookings';
 import Blogs from '../Pages/Blogs/Blogs';
 import ErrorHandle from '../Pages/404Error/ErrorHandle';
+import DynamicError from '../Pages/DynamicError/DynamicError';
 
 export const router = createBrowserRouter([
     {
@@ -17,20 +18,21 @@ export const router = createBrowserRouter([
                 Component: Home
             },
             {
-                path: '/:id',
-                loader: () => fetch('doctors.json'),
+                path: 'doctor/:id',
+                loader: () => fetch('/doctors.json'),
                 HydrateFallback: () => <div className='flex justify-center h-screen items-center'><span className="loading loading-bars loading-xl"></span></div>,
-                Component: DoctorsProfileDetails
+                Component: DoctorsProfileDetails,
+                errorElement: <DynamicError></DynamicError>
             },
             {
                 path: 'mybookings',
-                loader: () => fetch('doctors.json'),
+                loader: () => fetch('/doctors.json'),
                 HydrateFallback: () => <div className='flex justify-center h-screen items-center'><span className="loading loading-bars loading-xl"></span></div>,
                 Component: MyBookings
             },
             {
                 path: 'blogs',
-                loader: () => fetch('blogs.json'),
+                loader: () => fetch('/blogs.json'),
                 HydrateFallback: () => <div className='flex justify-center h-screen items-center'><span className="loading loading-bars loading-xl"></span></div>,
                 Component: Blogs
             }
