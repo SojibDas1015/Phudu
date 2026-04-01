@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Doctor from './Doctor';
 
-const DoctorList = () => {
+const DoctorList = ({doctorData}) => {
+    
     const [showData, setShowData] = useState(false)
-    const [doctorData, setDoctorData] = useState([])
-    useEffect(() => {
-        fetch('doctors.json').then(res => res.json()).then(data => setDoctorData(data));
-    }, [])
-    const doctors = showData ? doctorData : doctorData.slice(0,6)
+    
+    const doctors = showData ? doctorData : doctorData.slice(0, 6)
     const handleAllDataShow = () => {
         setShowData(!showData)
     }
@@ -19,7 +17,7 @@ const DoctorList = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-8'>
                 {
-                    
+
                     doctors.map(doctor => <Doctor key={doctor.id} doctor={doctor}></Doctor>)
                 }
             </div>
