@@ -1,9 +1,10 @@
-import { NavLink, useLoaderData, useNavigate, useParams } from 'react-router';
+import { NavLink, useLoaderData, useLocation, useNavigate, useParams } from 'react-router';
 import relogo from '../../assets/registration.png'
 import Available from './Available';
 import { BiMessageSquareError } from 'react-icons/bi';
 import { toast, ToastContainer } from 'react-toastify';
 import { getDataFormLocalStorage, setDataFormLocalStorage } from '../../Utelities/Utelities';
+import { useEffect } from 'react';
 const DoctorsProfileDetails = () => {
 
     const doctorsData = useLoaderData()
@@ -14,7 +15,6 @@ const DoctorsProfileDetails = () => {
     const todayDate = new Date();
     const weekDay = todayDate.toLocaleString('en-US', { weekday: 'long' })
     const isAvailable = availability.includes(weekDay)
-    console.log(isAvailable)
     const navigate = useNavigate()
     const handleBookNow = (id) => {
         const getmain = getDataFormLocalStorage()
@@ -68,12 +68,12 @@ const DoctorsProfileDetails = () => {
                 <h1 className='font-extrabold text-2xl md:text-2xl text-center max-w-[917px] mx-auto'>Book an Appointment</h1>
                 <div className='flex items-center justify-between border-y-1 border-dashed py-4'>
                     <p>Availability</p>
-                    <p className='text-[#09982F] border-1 border-[#09982F20] bg-[#09982F10] px-3 py-2 rounded-full'> {isAvailable ? 'Doctor Available Today' : 'Doctor Not Available Today' }</p>
+                    <p className='text-[#09982F] border-1 border-[#09982F20] bg-[#09982F10] px-3 py-2 rounded-full'> {isAvailable ? 'Doctor Available Today' : 'Doctor Not Available Today'}</p>
                 </div>
                 <p className='md:flex items-center gap-1 text-[#FFA000] border-1 border-[#FFA00020] bg-[#FFA00010] px-3 py-2 rounded-xl md:rounded-full text-center md:text-left'><span className='flex justify-center'><BiMessageSquareError /></span>
                     Due to high patient volume, we are currently accepting appointments for today only. We appreciate your understanding and cooperation.</p>
 
-                <button disabled={!isAvailable}  onClick={() => handleBookNow(id)} className={`${isAvailable ? 'py-2 bg-[#176AE5] rounded-full text-white text-lg font-bold w-full hover:bg-[#0055d4] cursor-pointer' : 'py-2 bg-gray-500 rounded-full text-white text-lg font-bold w-full cursor-not-allowed'}`}>Book Appointment Now</button>
+                <button disabled={!isAvailable} onClick={() => handleBookNow(id)} className={`${isAvailable ? 'py-2 bg-[#176AE5] rounded-full text-white text-lg font-bold w-full hover:bg-[#0055d4] cursor-pointer' : 'py-2 bg-gray-500 rounded-full text-white text-lg font-bold w-full cursor-not-allowed'}`}>Book Appointment Now</button>
 
             </div>
         </div>

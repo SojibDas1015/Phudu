@@ -22,7 +22,6 @@ const MyBookings = () => {
     const bookBtnCliked = useLocation()
     const showTost = bookBtnCliked.state
     const doctorName = bookBtnCliked?.state?.doctor
-    console.log(doctorName)
     useEffect(() => {
         if (showTost) {
             doctorName && toast.success(`Appointment Scheduled for ${doctorName}`)
