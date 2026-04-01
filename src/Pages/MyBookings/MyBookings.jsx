@@ -32,12 +32,12 @@ const MyBookings = () => {
     console.log(showAppoitment)
     return (
         <div className='max-w-[1281px] mx-auto px-2 md:px-10'>
-            <Rechart showAppoitment={showAppoitment}></Rechart>
-            <ToastContainer/>
+            <ToastContainer />
             {
                 getDataFormLocal.length > 0 ?
 
                     <div>
+                        <Rechart showAppoitment={showAppoitment}></Rechart>
                         <div className='space-y-4 py-14'>
                             <h1 className='font-extrabold text-2xl md:text-4xl text-center max-w-[917px] mx-auto'>Doctor’s Profile Details</h1>
                             <p className='text-xs md:text-base font-medium max-w-[1009px] mx-auto text-center'>Lorem ipsum dolor sit amet consectetur. Sit enim blandit orci tortor amet ut. Suscipit sed est fermentum magna. Quis vitae tempus facilisis turpis imperdiet mattis donec dignissim volutpat.</p>
