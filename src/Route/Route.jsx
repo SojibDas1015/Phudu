@@ -4,6 +4,7 @@ import Root from '../Root/Root';
 import Home from '../Pages/Home/Home';
 import DoctorsProfileDetails from '../Pages/DoctorsProfileDetails/DoctorsProfileDetails';
 import MyBookings from '../Pages/MyBookings/MyBookings';
+import Blogs from '../Pages/Blogs/Blogs';
 
 export const router = createBrowserRouter([
     {
@@ -17,14 +18,20 @@ export const router = createBrowserRouter([
             {
                 path: '/:id',
                 loader: () => fetch('doctors.json'),
-                HydrateFallback: ()=> <div className='flex justify-center h-screen items-center'><span className="loading loading-bars loading-xl"></span></div>,
+                HydrateFallback: () => <div className='flex justify-center h-screen items-center'><span className="loading loading-bars loading-xl"></span></div>,
                 Component: DoctorsProfileDetails
             },
             {
                 path: 'mybookings',
                 loader: () => fetch('doctors.json'),
-                HydrateFallback: ()=> <div className='flex justify-center h-screen items-center'><span className="loading loading-bars loading-xl"></span></div>,
+                HydrateFallback: () => <div className='flex justify-center h-screen items-center'><span className="loading loading-bars loading-xl"></span></div>,
                 Component: MyBookings
+            },
+            {
+                path: 'blogs',
+                loader: () => fetch('blogs.json'),
+                HydrateFallback: () => <div className='flex justify-center h-screen items-center'><span className="loading loading-bars loading-xl"></span></div>,
+                Component: Blogs
             }
         ]
     },

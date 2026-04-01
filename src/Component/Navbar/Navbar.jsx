@@ -28,7 +28,7 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1 gap-3 text-base">
                         <NavLink to={'/'} className={({isActive})=> isActive ? 'border-b-2' : ''}><li>Home</li></NavLink>
                         <NavLink to={'/mybookings'} className={({isActive})=> isActive ? 'border-b-2' : ''}><li>My-Bookings</li></NavLink>
-                        <li>Blogs</li>
+                        <NavLink to={'/blogs'} className={({isActive})=> isActive ? 'border-b-2' : ''}><li>Blogs</li></NavLink>
                         <li>Contact Us</li>
                     </ul>
                 </div>

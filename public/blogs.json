@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "question": "What is useState and how does it work in React?",
+    "answer": "useState holo ekti React Hook ja functional component-e state manage korte dei. Eta ekti array return kore jekhane prothom element-ti holo 'current state' ebong ditiyo-ti holo 'state update' korar function. Jokhon-i state update hoy, React component-ke re-render kore notun value screen-e dekhay.",
+    "example": "const [count, setCount] = useState(0);"
+  },
+  {
+    "id": 2,
+    "question": "What is the purpose of useEffect in React?",
+    "answer": "useEffect babohto hoy side-effects handle korar jonno, jemon: data fetching, DOM manual update, ba subscriptions. Er dependency array nirdharon kore je ei effect-ti kokhon run hobe. Dependency array khali thakle eta sudhu component mount hobar somoy ekbar-i run hoy.",
+    "example": "useEffect(() => { fetchData(); }, []);"
+  },
+  {
+    "id": 3,
+    "question": "What is a custom hook in React and when should you use one?",
+    "answer": "Custom hook holo ekti JavaScript function jar nam 'use' diye shuru hoy. Jokhon eki logic (jemon: form handling ba API calling) ekadhik component-e proyojon hoy, tokhon code duplication komate amra custom hook use করি।",
+    "useCase": "Reusing logic across different components."
+  },
+  {
+    "id": 4,
+    "question": "Difference between controlled and uncontrolled components? Which one is better?",
+    "answer": "Controlled component-e form data React state diye control kora hoy, ar Uncontrolled-e data sorasori DOM (Ref use kore) theke neya hoy. Sadharonoto 'Controlled' component-ke 'Better' bola hoy karon eta validation ebong state management-er jonno beshi nira-pod.",
+    "verdict": "Controlled is generally preferred for better predictability."
+  },
+  {
+    "id": 5,
+    "question": "Tell us something about useFormStatus()",
+    "answer": "useFormStatus holo React-er ekti notun hook (React 19/Server Actions-er sathe beshi proyojoniy) ja form submission-er status jemon 'pending' status provide kore. Eta kebol <form> er bhetorer child component-e kaj kore.",
+    "benefit": "Easily disable submit buttons or show spinners without manual state."
+  }
+]

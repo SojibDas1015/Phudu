@@ -41,7 +41,7 @@ const Rechart = ({ showAppoitment }) => {
     return (
         <div className='flex justify-center bg-white p-6'>
             <BarChart
-                style={{ width: '100%', maxWidth: '700px', maxHeight: '70vh', aspectRatio: 1.618 }}
+                style={{ width: '100%', maxWidth: '1200px', maxHeight: '70vh', aspectRatio: 3.618 }}
                 data={showAppoitment}
                 margin={{
                     top: 20,
