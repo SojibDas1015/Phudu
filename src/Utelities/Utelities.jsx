@@ -14,4 +14,11 @@ const setDataFormLocalStorage = (id) => {
 
 }
 
-export {getDataFormLocalStorage, setDataFormLocalStorage}
+const removeDataFormLocalStorage = (id) => {
+    console.log(id)
+    const localData = getDataFormLocalStorage()
+    const finalData = localData.filter(ar => ar!==id)
+    localStorage.setItem('appointment',JSON.stringify(finalData))
+}
+
+export {getDataFormLocalStorage, setDataFormLocalStorage , removeDataFormLocalStorage}

@@ -1,7 +1,11 @@
-import React from 'react';
+import { toast, ToastContainer } from 'react-toastify';
 
-const Book = ({book}) => {
-    const {name,speciality,designation,fee} = book
+const Book = ({ book ,handleRemoveData }) => {
+    const { id, name, speciality, designation, fee } = book
+    const handleRemoveMultiple = (id) =>{
+        name && toast.error(`Appointment Scheduled Remove ${name}`)
+        handleRemoveData(id)
+    }
     return (
         <div>
             <div className='space-y-4 p-8 bg-white rounded-3xl mb-10'>
@@ -15,7 +19,7 @@ const Book = ({book}) => {
                     </div>
                 </div>
                 <div className='border-b-1 border-dashed'></div>
-                <button className='py-2 border-1 border-[#FF0000] rounded-full text-[#FF0000] text-lg font-bold w-full hover:bg-[#FF0000] hover:text-white cursor-pointer'>Cancel Appointment</button>
+                <button onClick={()=>handleRemoveMultiple(id)} className='py-2 border-1 border-[#FF0000] rounded-full text-[#FF0000] text-lg font-bold w-full hover:bg-[#FF0000] hover:text-white cursor-pointer'>Cancel Appointment</button>
             </div>
         </div>
     );

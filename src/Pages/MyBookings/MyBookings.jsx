@@ -1,20 +1,36 @@
-import React, { useEffect } from 'react';
 import { BiMessageSquareError } from 'react-icons/bi';
-import { getDataFormLocalStorage } from '../../Utelities/Utelities';
-import { NavLink, useLoaderData } from 'react-router';
+import { getDataFormLocalStorage, removeDataFormLocalStorage } from '../../Utelities/Utelities';
 import Book from './Book';
+import { NavLink, useLoaderData, useLocation } from 'react-router';
+import { useEffect, useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 
 const MyBookings = () => {
     const doctorsData = useLoaderData()
     const getDataFormLocal = getDataFormLocalStorage()
     const myBooksData = doctorsData.filter(doctor => getDataFormLocal.includes(doctor.id))
-    useEffect(()=>{
-        toast.success("Wow so easy!")
-    },[])
+    const [showAppoitment, setShowAppoitment] = useState([])
+    useEffect(() => {
+        setShowAppoitment(myBooksData)
+    }, [doctorsData])
+    const handleRemoveData = (id) => {
+        removeDataFormLocalStorage(id)
+        const appointmentBook = myBooksData.filter(book => book.id != id)
+        setShowAppoitment(appointmentBook);
+    }
+    const bookBtnCliked = useLocation()
+    const showTost = bookBtnCliked.state
+    const doctorName = bookBtnCliked?.state?.doctor
+    console.log(doctorName)
+    useEffect(() => {
+        if (showTost) {
+            doctorName && toast.success(`Appointment Scheduled for ${doctorName}`)
+            window.history.replaceState({}, document.title)
+        }
+    }, [])
     return (
         <div className='max-w-[1281px] mx-auto px-2 md:px-10'>
-            <ToastContainer />
+            <ToastContainer/>
             {
                 getDataFormLocal.length > 0 ?
 
@@ -24,7 +40,7 @@ const MyBookings = () => {
                             <p className='text-xs md:text-base font-medium max-w-[1009px] mx-auto text-center'>Lorem ipsum dolor sit amet consectetur. Sit enim blandit orci tortor amet ut. Suscipit sed est fermentum magna. Quis vitae tempus facilisis turpis imperdiet mattis donec dignissim volutpat.</p>
                         </div>
                         {
-                            myBooksData.map((book,index) => <Book key={index} book={book}></Book>)
+                            showAppoitment.map((book, index) => <Book key={index} book={book} handleRemoveData={handleRemoveData} ></Book>)
                         }
                     </div>
 

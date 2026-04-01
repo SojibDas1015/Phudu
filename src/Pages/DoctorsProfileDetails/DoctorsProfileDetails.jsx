@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavLink, useLoaderData, useNavigate, useParams } from 'react-router';
 import relogo from '../../assets/registration.png'
 import Available from './Available';
@@ -11,13 +10,24 @@ const DoctorsProfileDetails = () => {
     const paramsId = parseInt(params.id);
     const doctorProfile = Array.isArray(doctorsData) ? doctorsData.find(doctor => doctor.id === paramsId) : null
     const { id, image, name, speciality, designation, workplace, registrationNumber, availability, fee } = doctorProfile;
+    const navigate = useNavigate()
     const handleBookNow = (id) => {
         const getmain = getDataFormLocalStorage()
-        setDataFormLocalStorage(id)
-        
+        if (getmain.includes(id)) {
+            
+            toast.error('Appointment Scheduled Already Exist')
+        }
+        else
+        {
+            
+            setDataFormLocalStorage(id)
+            navigate('/mybookings', { state: { showTost: true, doctor:name } })
+        }
+
     }
     return (
         <div className='max-w-[1281px] mx-auto px-2 md:px-10 '>
+            <ToastContainer/>
             <div className='space-y-4 py-14 bg-white rounded-3xl'>
                 <h1 className='font-extrabold text-2xl md:text-5xl text-center max-w-[917px] mx-auto'>Doctor’s Profile Details</h1>
                 <p className='text-xs md:text-base font-medium max-w-[1009px] mx-auto text-center'>Lorem ipsum dolor sit amet consectetur. Sit enim blandit orci tortor amet ut. Suscipit sed est fermentum magna. Quis vitae tempus facilisis turpis imperdiet mattis donec dignissim volutpat.</p>
@@ -56,9 +66,9 @@ const DoctorsProfileDetails = () => {
                 </div>
                 <p className='flex items-center gap-1 text-[#FFA000] border-1 border-[#FFA00020] bg-[#FFA00010] px-3 py2 rounded-full'><BiMessageSquareError />
                     Due to high patient volume, we are currently accepting appointments for today only. We appreciate your understanding and cooperation.</p>
-                <NavLink to='/mybookings'>
-                    <button onClick={() => handleBookNow(id)} className='py-2 bg-[#176AE5] rounded-full text-white text-lg font-bold w-full hover:bg-[#0055d4] cursor-pointer'>Book Appointment Now</button>
-                </NavLink>
+
+                <button onClick={() => handleBookNow(id)} className='py-2 bg-[#176AE5] rounded-full text-white text-lg font-bold w-full hover:bg-[#0055d4] cursor-pointer'>Book Appointment Now</button>
+
             </div>
         </div>
     );
