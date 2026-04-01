@@ -4,6 +4,7 @@ import Book from './Book';
 import { NavLink, useLoaderData, useLocation } from 'react-router';
 import { useEffect, useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
+import Rechart from './Rechart';
 
 const MyBookings = () => {
     const doctorsData = useLoaderData()
@@ -28,8 +29,10 @@ const MyBookings = () => {
             window.history.replaceState({}, document.title)
         }
     }, [])
+    console.log(showAppoitment)
     return (
         <div className='max-w-[1281px] mx-auto px-2 md:px-10'>
+            <Rechart showAppoitment={showAppoitment}></Rechart>
             <ToastContainer/>
             {
                 getDataFormLocal.length > 0 ?
