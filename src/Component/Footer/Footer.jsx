@@ -15,7 +15,7 @@ const Footer = () => {
                     <NavLink to={'/'} className={({ isActive }) => isActive ? 'border-b-2' : ''}><li>Home</li></NavLink>
                     <NavLink to={'/mybookings'} className={({ isActive }) => isActive ? 'border-b-2' : ''}><li>My-Bookings</li></NavLink>
                     <NavLink to={'/blogs'} className={({ isActive }) => isActive ? 'border-b-2' : ''}><li>Blogs</li></NavLink>
-                    <li>Contact Us</li>
+                    <NavLink to={'/blogs/contactus'} className={({ isActive }) => isActive ? 'border-b-2' : ''}><li>Contact Us</li></NavLink>
                 </ul>
             </div>
             <div className='border-1 max-w-[1061px] mx-auto border-[#0F0F0F20]'></div>

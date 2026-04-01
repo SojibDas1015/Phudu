@@ -5,6 +5,7 @@ import Home from '../Pages/Home/Home';
 import DoctorsProfileDetails from '../Pages/DoctorsProfileDetails/DoctorsProfileDetails';
 import MyBookings from '../Pages/MyBookings/MyBookings';
 import Blogs from '../Pages/Blogs/Blogs';
+import ErrorHandle from '../Pages/404Error/ErrorHandle';
 
 export const router = createBrowserRouter([
     {
@@ -37,6 +38,6 @@ export const router = createBrowserRouter([
     },
     {
         path: '*',
-        element: <div>Page Not Found</div>
+        Component: ErrorHandle
     }
 ])
